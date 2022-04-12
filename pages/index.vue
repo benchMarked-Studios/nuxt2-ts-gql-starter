@@ -1,5 +1,16 @@
 <template>
   <div>
+    <div class="container">
+      <button class="btn">Click Me</button>
+      <div class="card">
+        <button class="btn">Click Me</button>
+      </div>
+      <div class="card">
+        <p class="body">Here is some text</p>
+        <h1 class="title">Here is some text</h1>
+        <h2 class="subtitle">Here is some text</h2>
+      </div>
+    </div>
     <div class="md:mx-24 flex">
       <div class="flex flex-col mx-4">
         <h1 class="text-6xl text-display">Kavin Jey</h1>

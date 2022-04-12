@@ -88,4 +88,11 @@ export default defineConfig({
       },
     },
   },
+  shortcuts: {
+    btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
+    body: 'text-base text-justify',
+    title: 'text-3xl font-bold',
+    subtitle: 'text-xl',
+    card: 'flex flex-col rounded-lg bg-white min-h-full',
+  },
 })

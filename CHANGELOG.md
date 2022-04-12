@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/KavinJey/kj2/compare/v1.0.0...v1.0.1) (2022-04-12)
+
+
+### Bug Fixes
+
+* merging ([e1e5e6f](https://github.com/KavinJey/kj2/commit/e1e5e6fb4f5405db867dd98f5cd401170da1ae10))
+* merging ([6aa1c1e](https://github.com/KavinJey/kj2/commit/6aa1c1e52b4e69640b3a99edb936ee78a81935b6))
+
 # 1.0.0 (2022-04-12)
 
 ### Bug Fixes

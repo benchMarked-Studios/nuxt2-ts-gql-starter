@@ -19,7 +19,9 @@
     "*.**": "prettier --check --ignore-unknown"
   },
   "dependencies": {
+    "@nuxtjs/google-fonts": "^1.3.0",
     "core-js": "^3.19.3",
+    "graphql-tag": "^2.12.6",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
@@ -41,9 +43,11 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
+    "graphql": "^16.3.0",
     "husky": "^7.0.4",
     "jest": "^27.4.4",
     "lint-staged": "^12.1.2",
+    "nuxt-graphql-request": "^5.1.0",
     "nuxt-windicss": "^2",
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.1",

@@ -1,30 +1,47 @@
 <template>
   <div>
-    <div class="grid grid-cols-1 grid-rows-1">
-      <div class="grid mx-6 md:mx-24 row-span-1 col-span-1 z-10">
+    <div class="md:mx-24 flex">
+      <div class="flex flex-col mx-4">
         <h1 class="text-6xl text-display">Kavin Jey</h1>
         <p class="text-3xl text-sans mb-10">Full Stack Developer</p>
         <br />
 
-        <p class="text-xl text-sans text-left mb-10 md:w-1/3">
-          I&apos;m Kavin. I am a Full Stack Developer with experience working in
-          startup and corporate environments, mainly in Javascript and Python
-          environments.
+        <p class="text-xl text-sans text-left mb-10">
+          Hi there! I&apos;m Kavin.
+          <br />
+          I am a Full Stack Developer with experience working in startup and
+          corporate environments, mainly in Javascript and Python environments.
+        </p>
+        <p class="text-xl text-sans text-right mb-10">
+          This site is a constant work-in-progress.
+          <br />
+          I use this space to write out technical articles, <br />
+          try out new tech, as well as display some of the projects I've worked
+          on.
         </p>
       </div>
+
+      <Mosaic />
     </div>
-    <div
-      class="grid max-w-xs md:mx-12 md:-mt-96 row-span-1 col-span-1 place-content-center z-0"
-    >
+    <div class="flex">
       <!-- <img src="~assets/images/people-typing-codes.png"> -->
-      <DeskGraphic />
     </div>
 
     <div class="space-x-8 my-10 px-10 flex">
       <div class="w-full">
-        <h1 class="text-5xl text-orange mb-5">Experience</h1>
+        <h1 class="text-5xl text-orange mb-5">Articles</h1>
         <div class="bg-orange rounded-md shadow-xl p-4">
-          <p>Hi There</p>
+          <div v-if="articles">
+            <ArticleCard
+              v-for="entry of articles.user.publication.posts"
+              :key="entry.slug"
+              :cover-image="entry.coverImage"
+              :slug="entry.slug"
+              :title="entry.title"
+              :brief="entry.brief"
+              :content-markdown="entry.contentMarkdown"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -33,9 +50,40 @@
 
 <script lang="ts" setup>
 import Vue from 'vue'
+import { gql } from 'graphql-tag'
+import 'nuxt-graphql-request'
+
 export default Vue.extend({
   name: 'IndexPage',
   layout: 'defaultLayout',
+  async asyncData({ $graphql }) {
+    const articleCollectionQuery = gql`
+      query {
+        user(username: "kavinjey") {
+          username
+          name
+          tagline
+          coverImage
+          _id
+          publication {
+            _id
+            domain
+            posts {
+              title
+              coverImage
+              brief
+              contentMarkdown
+            }
+          }
+        }
+      }
+    `
+    const articles = await $graphql.hashnode.request(articleCollectionQuery)
+    console.log(articles)
+    return {
+      articles,
+    }
+  },
 })
 </script>
 

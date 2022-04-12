@@ -29,8 +29,32 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     'nuxt-windicss',
-  ],
 
+    'nuxt-graphql-request',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        download: true,
+        base64: true,
+        preload: true,
+        families: {
+          Rakkas: true,
+          'DM+Sans': true,
+          'Concert+One': true,
+        },
+      },
+    ],
+  ],
+  graphql: {
+    clients: {
+      cms: {
+        endpoint: 'https://cms.kavinjey.xyz/graphql',
+      },
+      hashnode: {
+        endpoint: 'https://api.hashnode.com',
+      },
+    },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 

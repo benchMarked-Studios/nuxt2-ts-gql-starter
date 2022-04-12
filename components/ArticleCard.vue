@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'BlogArticle',
+  name: 'ArticleCard',
   props: {
     slug: String,
     title: String,

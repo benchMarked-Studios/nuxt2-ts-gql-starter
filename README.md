@@ -15,6 +15,10 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# Preview Cloudflare worker deployment
+$ wrangler dev
+
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
@@ -66,3 +70,8 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+## Deployment
+
+Deployments are handled using Cloudflare Workers. The `wrangler.toml` and `workers-site/` portions of the repo describe the configuration.
+The builds are automated using Github Actions, the workflows can be found in `.github/`

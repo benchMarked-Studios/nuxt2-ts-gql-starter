@@ -47,11 +47,8 @@ export default {
   ],
   graphql: {
     clients: {
-      cms: {
-        endpoint: 'https://cms.kavinjey.xyz/graphql',
-      },
-      hashnode: {
-        endpoint: 'https://api.hashnode.com',
+      anime: {
+        endpoint: 'https://anilist.co/graphiql',
       },
     },
   },

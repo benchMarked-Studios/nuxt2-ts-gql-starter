@@ -57,30 +57,17 @@ export default Vue.extend({
   name: 'IndexPage',
   layout: 'defaultLayout',
   async asyncData({ $graphql }) {
-    const articleCollectionQuery = gql`
+    const anyGQLQuery = gql`
       query {
-        user(username: "kavinjey") {
-          username
+        Studio(search: "anime") {
+          id
           name
-          tagline
-          coverImage
-          _id
-          publication {
-            _id
-            domain
-            posts {
-              title
-              coverImage
-              brief
-              contentMarkdown
-            }
-          }
         }
       }
     `
-    const articles = await $graphql.hashnode.request(articleCollectionQuery)
+    const animes = await $graphql.anime.request(anyGQLQuery)
     return {
-      articles,
+      animes,
     }
   },
 })

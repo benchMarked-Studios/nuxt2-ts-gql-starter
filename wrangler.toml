@@ -1,9 +1,9 @@
-name = "kavinjey"
+name = "kavinjey-dev"
 type = "webpack"
 account_id = "10e989a096eecf18d6dd183b0c01f01e"
-route = 'kavinjey.xyz/'
-zone_id = ''
-usage_model = ''
+zone_id = 'f4065e7e4a322366394a30188602b16f'
+route = 'dev.kavinjey.xyz/*'
+vars = { ENVIRONMENT = "dev" }
 compatibility_flags = []
 workers_dev = true
 compatibility_date = "2022-04-11"
@@ -11,4 +11,10 @@ compatibility_date = "2022-04-11"
 [site]
 bucket = "dist"
 entry-point = "workers-site"
+
+
+[env.production]
+name = "kavinjey"
+vars = { ENVIRONMENT = "production" }
+route = "kavinjey.xyz/*"
 

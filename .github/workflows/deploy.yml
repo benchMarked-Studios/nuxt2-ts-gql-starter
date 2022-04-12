@@ -5,6 +5,12 @@ on:
     workflows: [Test And Build]
     types:
       - completed
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose an environment to deploy to: <dev|staging|prod>'
+        required: true
+        default: 'dev'
 
 jobs:
   deploy:
@@ -35,3 +41,5 @@ jobs:
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: dist
+          environment: ${{ github.event.inputs.environment }}

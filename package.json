@@ -1,6 +1,6 @@
 {
   "name": "kj2",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -12,7 +12,8 @@
     "lint": "yarn lint:js && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "ci": "npx semantic-release"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --cache",
@@ -52,5 +53,33 @@
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.1",
     "vue-jest": "^3.0.4"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "dev"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "addReleases": "top"
+        }
+      ]
+    ]
   }
 }

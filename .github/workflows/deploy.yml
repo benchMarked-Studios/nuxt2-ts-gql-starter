@@ -2,13 +2,12 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ['Test, Build, Release']
+    workflows: ['Test And Build']
     types:
       - completed
 
 jobs:
   deploy:
-    needs: lintTestAndRelease
     runs-on: ubuntu-latest
     name: Deploy
     steps:

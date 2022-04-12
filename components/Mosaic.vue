@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .image-mosaic {
   display: grid;
   gap: 0rem;
@@ -73,5 +73,11 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+}
+
+@media (max-width: 640px) {
+  .image-mosaic {
+    display: none;
+  }
 }
 </style>

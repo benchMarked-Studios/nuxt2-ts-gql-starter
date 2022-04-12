@@ -1,23 +1,23 @@
-name: ci
+name: Test, Build, Release
 
 on:
   push:
     branches:
       - main
-      - master
+      - dev
   pull_request:
     branches:
       - main
-      - master
+      - dev
 
 jobs:
-  ci:
+  lintTestAndRelease:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [16]
 
     steps:
       - name: Checkout 🛎
@@ -50,3 +50,9 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HUSKY: 0
+        run: npx semantic-release

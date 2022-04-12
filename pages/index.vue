@@ -50,26 +50,27 @@
 
 <script lang="ts" setup>
 import Vue from 'vue'
-import { gql } from 'graphql-tag'
-import 'nuxt-graphql-request'
+// import { gql } from 'graphql-tag'
+// import 'nuxt-graphql-request'
 
 export default Vue.extend({
   name: 'IndexPage',
   layout: 'defaultLayout',
-  async asyncData({ $graphql }) {
-    const anyGQLQuery = gql`
-      query {
-        Studio(search: "anime") {
-          id
-          name
-        }
-      }
-    `
-    const animes = await $graphql.anime.request(anyGQLQuery)
-    return {
-      animes,
-    }
-  },
+  // Example of gql Query
+  // async asyncData({ $graphql }) {
+  //   const anyGQLQuery = gql`
+  //     query {
+  //       Studio(search: "anime") {
+  //         id
+  //         name
+  //       }
+  //     }
+  //   `
+  //   const animes = await $graphql.anime.request(anyGQLQuery)
+  //   return {
+  //     animes,
+  //   }
+  // },
 })
 </script>
 

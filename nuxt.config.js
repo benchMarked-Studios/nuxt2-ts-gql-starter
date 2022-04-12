@@ -29,6 +29,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     'nuxt-windicss',
+    'vue-plausible',
 
     'nuxt-graphql-request',
     [
@@ -45,6 +46,10 @@ export default {
       },
     ],
   ],
+  plausible: {
+    domain: 'change',
+    apiHost: 'change',
+  },
   graphql: {
     clients: {
       anime: {

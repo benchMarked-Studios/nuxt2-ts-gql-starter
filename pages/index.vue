@@ -79,7 +79,6 @@ export default Vue.extend({
       }
     `
     const articles = await $graphql.hashnode.request(articleCollectionQuery)
-    console.log(articles)
     return {
       articles,
     }

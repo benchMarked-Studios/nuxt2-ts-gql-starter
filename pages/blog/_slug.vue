@@ -25,7 +25,6 @@ export default Vue.extend({
   layout: 'defaultLayout',
   asyncData({ params }) {
     const slug = params.slug
-    console.log('this is slug', slug)
     return {
       slug,
       data: {

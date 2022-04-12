@@ -34,11 +34,26 @@
 export default {
   name: 'ArticleCard',
   props: {
-    slug: String,
-    title: String,
-    brief: String,
-    contentMarkdown: String,
-    coverImage: String,
+    slug: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    brief: {
+      type: String,
+      required: true,
+    },
+    contentMarkdown: {
+      type: String,
+      required: true,
+    },
+    coverImage: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>

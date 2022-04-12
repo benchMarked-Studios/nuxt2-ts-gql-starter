@@ -11,7 +11,7 @@ on:
       - dev
 
 jobs:
-  ci:
+  lintTestAndRelease:
     runs-on: ${{ matrix.os }}
 
     strategy:
